@@ -2,22 +2,71 @@
 // om zo de server te draaien
 
 // Het importeren van express uit de node_module mappen
-import express, { json } from 'express'
+import express from 'express'
 
 // Importeer deze zelfgemaakte functie in de code om 
 // zo url's goed te kunnen ontvangen
-import fetchJson from '../helpers/fetch-json.js'
+import fetchJson from './helpers/fetch-json.js'
+
+// Express denieren naar "app"
+const app = express()
+
+// de link naar de data definieren
+const apiUrl = 'https://redpers.nl/wp-json/wp/v2/posts'
+
+
+
+
+// Stap 2 | Stel de juiste mappen in voor de server
+
+// Hier stel je in dat de bestanden 
+// die worden gelezen ejs zijn
+app.set('view engine', 'ejs')
+
+//  De map toewijzen waar deze bestanden staan
+app.set('views', './views')
+
+// waar je de statische data kan terugvinden
+app.use(express.static('public'))
 
 
 
 
 
 
+// Stap 3 | Het maken van routes van de server
 
-// Stap 3 | Een route geven aan de server om te draaien
+// een route voor je data(index)
+app.get('/', function (request, response) {
+
+    // Hier haal je de url op en maak je er een
+    // Json file van ipv een link. Waarna 
+    // het wordt vernoemd naar apiData
+    fetchJson(apiUrl).then((apiData) => {
+
+        // Deze info wordt daarna 
+        // meegegeven aan de toegewezen EJS
+        response.render('home')
+
+        // Hiermee kan je checken of hij 
+        // de juiste data ophaald van de API
+        // console.log(apiData)
+    })
+})
+
+
+app.get('/:category', function (request, response) {
+    fetchJson(apiUrl).then((apiData) => {
+        response.render('category')
+        console.log(apiData)
+    })
+})
+
+
+// Stap 4 | Een route geven aan de server om te draaien
 
 // Stel het poortnummer in waar express op moet gaan luisteren
-app.set('port', process.env.PORT || 8000)
+app.set('port', process.env.PORT || 8080)
 
 // Start express op, haal daarbij het zojuist ingestelde poortnummer op
 app.listen(app.get('port'), function () {

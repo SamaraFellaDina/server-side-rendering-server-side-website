@@ -1,0 +1,38 @@
+@font-face {
+    font-family: "Merriweather";
+    src: url("./assets/fonts/Merriweather/Merriweather-Regular.ttf");
+}
+
+* {
+    font-family: var(--font-serif);
+}
+
+:root {
+    --primary-color-1:#2e2e2e;
+    --primary-color-2:#747474;
+    --primary-color-3:#E85340;
+    --primary-color-4:#F7F7F5;
+    --secondair-color-5:;
+    --secondair-color-6:;
+
+    --font-sans-serif:
+    --font-serif: "Merriweather", arial, serif;
+}
+
+.main-header{
+    height: 2em;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-content: center;
+}
+
+.main-header .main-category ul {
+    /* display: none; */
+}
+
+.main-header img,
+.main-header svg {
+    width: auto;
+    height: 100%;
+}
