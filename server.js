@@ -54,11 +54,12 @@ app.get('/', function (request, response) {
     })
 })
 
-
+// Hoe weet hij dat het gaat om de header?
 app.get('/:category', function (request, response) {
     fetchJson(apiUrl).then((apiData) => {
-        response.render('category')
-        console.log(apiData)
+        // data word meegenomen naar category.ejs
+        response.render('category.ejs')
+        // console.log(apiData)
     })
 })
 
