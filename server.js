@@ -15,8 +15,6 @@ const app = express()
 const apiUrl = 'https://redpers.nl/wp-json/wp/v2/posts'
 
 
-
-
 // Stap 2 | Stel de juiste mappen in voor de server
 
 // Hier stel je in dat de bestanden 
@@ -29,10 +27,8 @@ app.set('views', './views')
 // waar je de statische data kan terugvinden
 app.use(express.static('public'))
 
-
-
-
-
+// Is makkelijker om te gebruiken bij forms
+app.use(express.urlencoded({ extended: true }))
 
 // Stap 3 | Het maken van routes van de server
 
@@ -46,7 +42,10 @@ app.get('/', function (request, response) {
 
         // Deze info wordt daarna 
         // meegegeven aan de toegewezen EJS
-        response.render('home')
+        response.render('home', {
+            artikelen: apiData,
+            artikel: apiData.data
+        })
 
         // Hiermee kan je checken of hij 
         // de juiste data ophaald van de API
@@ -54,11 +53,21 @@ app.get('/', function (request, response) {
     })
 })
 
+app.get('/artikel/:id',function(request,response) {
+    fetchJson(apiUrl + "?filter={'id'}" + request.params.id).then((artikelData) => {
+        // console.log(artikelData)
+        artikel:artikelData.data.id
+
+    })
+})
+
 // Hoe weet hij dat het gaat om de header?
 app.get('/:category', function (request, response) {
     fetchJson(apiUrl).then((apiData) => {
         // data word meegenomen naar category.ejs
-        response.render('category.ejs')
+        response.render('category'), {
+            category: apiData.articleSection
+        }
         // console.log(apiData)
     })
 })
@@ -67,7 +76,7 @@ app.get('/:category', function (request, response) {
 // Stap 4 | Een route geven aan de server om te draaien
 
 // Stel het poortnummer in waar express op moet gaan luisteren
-app.set('port', process.env.PORT || 8080)
+app.set('port', process.env.PORT || 6969)
 
 // Start express op, haal daarbij het zojuist ingestelde poortnummer op
 app.listen(app.get('port'), function () {

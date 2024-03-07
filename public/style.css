@@ -1,10 +1,17 @@
 @font-face {
     font-family: "Merriweather";
-    src: url("./assets/fonts/Merriweather/Merriweather-Regular.ttf");
+    src: url(".../assets/fonts/Merriweather/Merriweather-Regular.ttf");
+}
+
+@font-face {
+    font-family: "Inter";
+    src: url(".../assets/fonts/Merriweather/Inter-Regular.ttf");
 }
 
 body {
-    font-family: var(--font-serif);
+    font-family: var(--font-sans-serif);
+    padding: 0;
+    margin: 0;
 }
 
 :root {
@@ -12,23 +19,15 @@ body {
     --primary-color-2:#747474;
     --primary-color-3:#E85340;
     --primary-color-4:#F7F7F5;
-    --secondair-color-5:;
-    --secondair-color-6:;
+    /* --secondair-color-5:;
+    --secondair-color-6:; */
 
-    --font-sans-serif:;
-    --font-serif: "Merriweather", verdana, sans-serif;
+    --font-sans-serif:"Inter", arial, sans-serif;
+    --font-serif: "Merriweather", serif;
+    --border-styles: 2px solid var(--primary-color-1);
 }
 
-.main-header{
-    height: 2em;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-content: center;
-}
-
-.main-header .main-category ul {
-    /* display: none; */
+.home-articles {
     display: block;
     list-style-type: none;
     margin-block-start: 0em;
@@ -38,9 +37,65 @@ body {
     padding-inline-start: 0px;
 }
 
+.home-articles img {
+    width: 100%;
+}
+
+.home-articles li {
+    border-bottom: var(--border-styles)
+}
+
+.home-articles h2 {
+    padding: .5em 1em .5em 1em ;
+    display: flex;
+    font-family: var(--font-serif);
+    font-weight: 900;
+}
+
+/* .home-articles li:nth-child(1) {
+    
+} */
+
+.main-header {
+    height: 2em;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-content: center;
+    border-bottom: var(--border-styles)
+
+}
+
+.main-header .main-category ul {
+    display: none;
+    list-style-type: none;
+    background-color: var(--primary-color-4);
+    position: absolute;
+    left: 0;
+    width: 100%;
+
+    margin-block-start: 0em;
+    margin-block-end: 0em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 0px;
+
+}
+
+.main-header .main-category a {
+    text-decoration: none;
+}
+
+.main-header .main-category li {
+    font-size: 1.3em;
+    padding: 1em;
+    border-bottom: var(--border-styles)
+}
+
 .main-header img,
 .main-header svg {
     width: auto;
     height: 100%;
     cursor: pointer;
 }
+

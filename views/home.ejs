@@ -1,4 +1,18 @@
 <%- include('./partials/head') %>
-dad ,
+
+<ul class="home-articles">
+    <% artikelen.forEach(artikel => {
+          { %>
+          <li>
+            <a>
+              <img src="<%=artikel.jetpack_featured_media_url%>">
+              <h2><%-artikel.title.rendered%></h2>
+            </a>
+            %>
+          </li>
+        <% }
+      }) %>
+</ul>
+
 
 <%- include('./partials/foot') %>
