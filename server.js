@@ -12,7 +12,10 @@ import fetchJson from './helpers/fetch-json.js'
 const app = express()
 
 // de link naar de data definieren
-const apiUrl = 'https://redpers.nl/wp-json/wp/v2/posts'
+const apiUrl = 'https://redpers.nl/wp-json/wp/v2'
+const apiPosts = apiUrl + '/posts'
+const apiUsers = apiUrl + '/user'
+const apiCategories = apiUrl + '/category'
 
 
 // Stap 2 | Stel de juiste mappen in voor de server
@@ -38,13 +41,12 @@ app.get('/', function (request, response) {
     // Hier haal je de url op en maak je er een
     // Json file van ipv een link. Waarna 
     // het wordt vernoemd naar apiData
-    fetchJson(apiUrl).then((apiData) => {
+    fetchJson(apiPosts).then((apiData) => {
 
         // Deze info wordt daarna 
         // meegegeven aan de toegewezen EJS
         response.render('home', {
-            artikelen: apiData,
-            artikel: apiData.data
+            articles: apiData,
         })
 
         // Hiermee kan je checken of hij 
