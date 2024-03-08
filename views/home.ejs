@@ -1,14 +1,14 @@
 <%- include('./partials/head') %>
 
 <ul class="home-articles">
-    <% articles.forEach(artikel => {
+    <% articles.forEach(article => {
           { %>
           <li>
             <a>
-              <img src="<%=artikel.jetpack_featured_media_url%>">
-              <h2><%-artikel.title.rendered%></h2>
+              <img src="<%=article.jetpack_featured_media_url%>">
+              <h2><%-article.title.rendered%></h2>
               <section>
-                <!-- <h3><%=artikel.author%><span class="leestijd-articles"> - 3 min</span></h3> -->
+                <!-- <h3><%=article.author%><span class="leestijd-articles"> - 3 min</span></h3> -->
                 <h3>Jitze de Vries<span class="leestijd-articles"> - 3 min</span></h3>
                 <button>></button>
               </section>
