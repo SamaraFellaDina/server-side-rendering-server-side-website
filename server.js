@@ -105,7 +105,7 @@ const categoryRoutes = [
 // Stap 5 | Een route geven aan de server om te draaien
 
 // Stel het poortnummer in waar express op moet gaan luisteren
-app.set('port', process.env.PORT || 6969)
+app.set('port', process.env.PORT || 7000)
 
 // Start express op, haal daarbij het zojuist ingestelde poortnummer op
 app.listen(app.get('port'), function () {
