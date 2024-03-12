@@ -4,12 +4,11 @@
     <% articles.forEach(article => {
           { %>
           <li>
-            <a>
+            <a href="/artikel/<%=article.id%>">
               <img src="<%=article.jetpack_featured_media_url%>">
               <h2><%-article.title.rendered%></h2>
               <section>
-                <!-- <h3><%=article.author%><span class="leestijd-articles"> - 3 min</span></h3> -->
-                <h3>Jitze de Vries<span class="leestijd-articles"> - 3 min</span></h3>
+                <h3><%=article.yoast_head_json.author%>&nbsp;<span class="leestijd-articles"> - 3 min</span></h3>
                 <button>></button>
               </section>
             </a>

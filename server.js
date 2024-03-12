@@ -14,8 +14,8 @@ const app = express()
 // de link naar de data definieren
 const apiUrl = 'https://redpers.nl/wp-json/wp/v2'
 const apiPosts = apiUrl + '/posts'
-const apiUsers = apiUrl + '/user'
-const apiCategories = apiUrl + '/category'
+const apiUsers = apiUrl + '/users'
+const apiCategories = apiUrl + '/categories'
 
 
 // Stap 2 | Stel de juiste mappen in voor de server
@@ -46,36 +46,63 @@ app.get('/', function (request, response) {
         // Deze info wordt daarna 
         // meegegeven aan de toegewezen EJS
         response.render('home', {
-            articles: apiData,
+            articles: apiData
         })
-
+        
         // Hiermee kan je checken of hij 
         // de juiste data ophaald van de API
         // console.log(apiData)
     })
 })
 
-app.get('/artikel/:id',function(request,response) {
-    fetchJson(apiUrl + "?filter={'id'}" + request.params.id).then((artikelData) => {
-        // console.log(artikelData)
-        artikel:artikelData.data.id
 
+// app.get('/artikel/:id', function (request, response) {
+//     fetchJson(apiPosts + request.params.id).then((articleData) => {
+        
+//         response.render('article',)
+//     })
+// })
+
+app.get('/artikel/:id', function (request, response) {
+ 
+  // Hier haal je de url op en maak je er een
+  // Json file van ipv een link. Waarna
+  // het wordt vernoemd naar apiData
+  fetchJson(apiPosts + '?include= +' + request.params.id).then((apiData) => {
+ 
+      // Deze info wordt daarna
+      // meegegeven aan de toegewezen EJS
+      response.render('article', {
+        // .data is belangrijk om er bij te schrijven
+        // alle id's zijn een soort van mappen, en door .data te schrijven ga je eigenlijk een map 'dieper'
+          article: apiData
+      })
+      console.log(apiData)
     })
-})
-
-// Hoe weet hij dat het gaat om de header?
-app.get('/:category', function (request, response) {
-    fetchJson(apiUrl).then((apiData) => {
-        // data word meegenomen naar category.ejs
-        response.render('category'), {
-            category: apiData.articleSection
-        }
-        // console.log(apiData)
-    })
-})
+  })
 
 
-// Stap 4 | Een route geven aan de server om te draaien
+// Stap 4 | Het maken van categorieeen in routes
+const categoryRoutes = [
+    'binnenland',
+    'buitenland',
+    'column',
+    'economie',
+    'kunst & media',
+    'podcast',
+    'politiek',
+    'wetenschap'
+  ]
+   
+  categoryRoutes.forEach(category => {
+    app.get("/" + category, function (request, response) {
+        fetchJson(apiCategories).then(([mediaAPI, postsAPI]) => {
+        response.render(categoryRoutes, { media: mediaAPI, posts: postsAPI });
+      });
+    });
+  })
+
+// Stap 5 | Een route geven aan de server om te draaien
 
 // Stel het poortnummer in waar express op moet gaan luisteren
 app.set('port', process.env.PORT || 6969)
