@@ -59,8 +59,15 @@ Ik maak gebruik van verschillende files.
 
 
 ## Bronnen
-[Red Pers JSON](https://redpers.nl/wp-json/wp/v2)
-[Red Pers Website](https://redpers.nl/)
+* [Red Pers JSON](https://redpers.nl/wp-json/wp/v2)
+* [Red Pers Website](https://redpers.nl/)
+
+### Navigeer door de repository heen
+* [Issues](https://github.com/SamaraFellaDina/server-side-rendering-server-side-website/issues)
+* [Commits](https://github.com/SamaraFellaDina/server-side-rendering-server-side-website/commits/main/)
+* [Project board💪](https://github.com/users/SamaraFellaDina/projects/8)
+* [Wiki](https://github.com/SamaraFellaDina/server-side-rendering-server-side-website/wiki/Home)
+
 
 ## Licentie
 
