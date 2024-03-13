@@ -42,12 +42,25 @@ Het project maakt gebruik van de volgende dingen:
 * Maakt gebruik van server-side
 * Maakt gebruik van [Cyclic](https://www.cyclic.sh/) hosting
 * Maakt gebruik van een [project board](https://github.com/users/SamaraFellaDina/projects/8)
+* Gebruik gemaakt van `node.js`, en `express`
+  * Er zit ook een `helper` in die onder andere een `fetchJson` command gebruikt. 
   
 ## Installatie
 <!-- Bij Instalatie staat hoe een andere developer aan jouw repo kan werken -->
+Ik maak gebruik van verschillende files. 
+* Ik werk veel in de `/view` bestanden. Waarin de vormgeving (ookwel de frontend uiting) kan vinden. 
+  * De pagina's, denk aan de `home.ejs` en `article.ejs`.
+  * De `/partials` waarin je onder andere de `head.ejs` en `foot.ejs` kan vinden.
+* Ik werk aan de `server.js` waarin de server wordt opgebouwd
+  *  Hierin worden de routes gemaakt
+  *  De port geselecteerd
+  *  De express files geimporteerd
+  *  Alle `Json`'s opgehaald
 
 
 ## Bronnen
+[Red Pers JSON](https://redpers.nl/wp-json/wp/v2)
+[Red Pers Website](https://redpers.nl/)
 
 ## Licentie
 
