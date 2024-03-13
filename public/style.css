@@ -187,6 +187,8 @@ p {
     border: var(--border-styles);
     width: 100%;
     align-items: center;
+    object-fit: cover;
+
 
 }
 

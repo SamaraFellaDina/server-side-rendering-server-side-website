@@ -63,12 +63,12 @@ app.get('/', function (request, response) {
 //     })
 // })
 
-app.get('/artikel/:id', function (request, response) {
+app.get('/artikel/:slug', function (request, response) {
  
   // Hier haal je de url op en maak je er een
   // Json file van ipv een link. Waarna
   // het wordt vernoemd naar apiData
-  fetchJson(apiPosts + '?include= +' + request.params.id).then((apiData) => {
+  fetchJson(apiPosts + '?slug=' + request.params.slug).then((apiData) => {
  
       // Deze info wordt daarna
       // meegegeven aan de toegewezen EJS
@@ -77,7 +77,7 @@ app.get('/artikel/:id', function (request, response) {
         // alle id's zijn een soort van mappen, en door .data te schrijven ga je eigenlijk een map 'dieper'
           article: apiData
       })
-      console.log(apiData)
+      // console.log(apiData)
     })
   })
 
