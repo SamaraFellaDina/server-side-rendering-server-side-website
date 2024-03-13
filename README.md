@@ -11,7 +11,10 @@
   * [Licentie](#licentie)
 
 ## Beschrijving
-Voor Red Pers moet er een nieuwe website worden gerealiseerd d.m.v een Wordpress API, die net wat anders werkt dan een Directus API.
+Sinds juni 2023 is de website gelanceerd (misschien iets te vroeg) waarbij de website is opgezet met Wordpress en Elementor. Hierbij zitten een aantal bugs en is Red Pers geinteresseerd om afstand te doen van Elementor (een plugin van Wordpress). Red pers is een toegankelijk en inclusief opleidingsplatform dat is bedoeld om jonge, aspirerende journalisten. Bij dit platform kunnen deze jonge journalisten. Het bedrijf bestaat uit circa 50 mensen, die per half jaar doorstroomt om zo meer informatie op te doen over journalistiek. Dit bedrijf is vooral bedoelt om verschillende mensen die geïnteresseerd zijn in journalistiek een plekje tunnen geven in dit platform. Waarbij zij verschillende opdrachten en workshops zijn om hierover meer informatie op te doen.
+
+![image](https://github.com/SamaraFellaDina/server-side-rendering-server-side-website/assets/144009778/f992c424-dd0e-45d5-b0f9-1df0482fa274)
+
 
 ### User Stories
 De volgende User Stories zijn hiervoor gegeven:
@@ -27,10 +30,19 @@ De volgende User Stories zijn hiervoor gegeven:
 
 ## Gebruik
 <!--Bij Gebruik staat hoe je project er uit ziet, hoe het werkt en wat je er mee kan. -->
+Het project maakt gebruik van de volgende dingen:
+* Er wordt code geschreven via VS code
+* Er wordt gebruik gemaakt van de [Wordpress API](https://redpers.nl/wp-json/wp/v2)
+
+
 
 ## Kenmerken
 <!-- Bij Kenmerken staat welke technieken zijn gebruikt en hoe. Wat is de HTML structuur? Wat zijn de belangrijkste dingen in CSS? Wat is er met Javascript gedaan en hoe? Misschien heb je een framwork of library gebruikt? -->
-
+* Maakt gebruik van een [Wordpress API](https://redpers.nl/wp-json/wp/v2)
+* Maakt gebruik van server-side
+* Maakt gebruik van [Cyclic](https://www.cyclic.sh/) hosting
+* Maakt gebruik van een [project board](https://github.com/users/SamaraFellaDina/projects/8)
+  
 ## Installatie
 <!-- Bij Instalatie staat hoe een andere developer aan jouw repo kan werken -->
 
