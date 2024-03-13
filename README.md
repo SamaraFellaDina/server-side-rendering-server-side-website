@@ -1,8 +1,6 @@
 > _Fork_ deze leertaak en ga aan de slag. Onderstaande outline ga je gedurende deze taak in jouw eigen GitHub omgeving uitwerken. De instructie vind je in: [docs/INSTRUCTIONS.md](docs/INSTRUCTIONS.md)
 
-# Titel
-<!-- Geef je project een titel en schrijf in één zin wat het is -->
-
+# Red Pers 
 ## Inhoudsopgave
 
   * [Beschrijving](#beschrijving)
@@ -13,9 +11,19 @@
   * [Licentie](#licentie)
 
 ## Beschrijving
-<!-- In de Beschrijving staat kort beschreven wat voor project het is en wat je hebt gemaakt -->
-<!-- Voeg een mooie poster visual toe 📸 -->
-<!-- Voeg een link toe naar Github Pages 🌐-->
+Voor Red Pers moet er een nieuwe website worden gerealiseerd d.m.v een Wordpress API, die net wat anders werkt dan een Directus API.
+
+### User Stories
+De volgende User Stories zijn hiervoor gegeven:
+
+* Als lezer wil ik het laatste artikel uitgelicht zien, zodat ik in een oogopslag kan weten of ik het al heb gelezen.
+* Als lezer wil ik via mijn mobiel, tablet, en website gebruik kunnen maken van de website, zodat ik overal en ten alle tijden goed kan lezen. (Dit punt en dat over de verschillende browsers zijn eigenlijk meer * technische eisen.)
+* Als lezer wil ik een overzicht hebben van de laatste artikelen in de verschillende katernen (categorieën), zodat ik weet wat Red Pers allemaal publiceert.
+* Als potentieel werkgever wil ik direct kunnen zien wie een artikel geschreven heeft, zodat ik goede auteurs kan herkennen.
+* Als potentieel werkgever wil ik een overzicht van de artikelen van een auteur kunnen zien, zodat ik het volledige werk van een auteur kan beoordelen.
+* Idem ditto met de twee hierboven voor eindredacteuren (maar die functionaliteit is nog niet ingebouwd in de website, dus dat staat nog niet goed in de metadata).
+* Als lezer wil ik makkelijk kunnen doneren, zodat Red Pers prachtige artikelen kan blijven publiceren. (🙂)
+* Als lezer wil ik herinnerd worden aan de nieuwsbrief, zodat ik niet vergeet om me daarvoor aan te melden.
 
 ## Gebruik
 <!--Bij Gebruik staat hoe je project er uit ziet, hoe het werkt en wat je er mee kan. -->
