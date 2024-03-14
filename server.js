@@ -45,7 +45,7 @@ app.get('/', function (request, response) {
 
         // Deze info wordt daarna 
         // meegegeven aan de toegewezen EJS
-        response.render('home', {
+        response.render('home.ejs', {
             articles: apiData
         })
         
@@ -56,13 +56,6 @@ app.get('/', function (request, response) {
 })
 
 
-// app.get('/artikel/:id', function (request, response) {
-//     fetchJson(apiPosts + request.params.id).then((articleData) => {
-        
-//         response.render('article',)
-//     })
-// })
-
 app.get('/artikel/:slug', function (request, response) {
  
   // Hier haal je de url op en maak je er een
@@ -72,14 +65,14 @@ app.get('/artikel/:slug', function (request, response) {
  
       // Deze info wordt daarna
       // meegegeven aan de toegewezen EJS
-      response.render('article', {
+      response.render('article.ejs', {
         // .data is belangrijk om er bij te schrijven
         // alle id's zijn een soort van mappen, en door .data te schrijven ga je eigenlijk een map 'dieper'
           article: apiData
-      })
-      // console.log(apiData)
     })
+      // console.log(apiData)
   })
+})
 
 
 // Stap 4 | Het maken van categorieeen in routes
@@ -93,11 +86,15 @@ const categoryRoutes = [
     'politiek',
     'wetenschap'
   ]
-   
+  //  https://redpers.nl/wp-json/wp/v2/posts?filter=[articleSection]=%22binnenland%22
   categoryRoutes.forEach(category => {
     app.get("/" + category, function (request, response) {
-        fetchJson(apiCategories).then(([mediaAPI, postsAPI]) => {
-        response.render(categoryRoutes, { media: mediaAPI, posts: postsAPI });
+        fetchJson(apiCategories + "?filter=" + category).then((categoryApi) => {
+
+          // Kijken of alle goede dat is binnengekomen
+          // console.log(categoryApi)
+
+          response.render('category.ejs')
       });
     });
   })
